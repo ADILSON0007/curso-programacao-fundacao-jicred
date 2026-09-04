@@ -1,311 +1,320 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS Topics - Skeleton</title>
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Topics - Skeleton</title>
 
-      body {
-        background-color: #f2f4f8;
-        color: #1f2937;
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        line-height: 1.5;
-      }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      .topo {
-        background-color: #ffffff;
-        padding: 24px 32px;
-        border-bottom: 2px solid #e5e7eb;
-        margin-bottom: 24px;
-      }
+    body {
+      background-color: #f2f4f8;
+      color: #1f2937;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
 
-      .titulo-pagina {
-        font-size: 28px;
-        font-weight: bold;
-        color: #16a34a;
-        margin-bottom: 6px;
-      }
+    .topo {
+      background-color: #ffffff;
+      padding: 24px 32px;
+      border-bottom: 2px solid #e5e7eb;
+      margin-bottom: 24px;
+    }
 
-      .subtitulo-pagina {
-        font-size: 15px;
-        color: #6b7280;
-      }
+    .titulo-pagina {
+      font-size: 28px;
+      font-weight: bold;
+      color: #16a34a;
+      margin-bottom: 6px;
+    }
 
-      .conteudo {
-        width: 90%;
-        margin: 0 auto;
-        padding-bottom: 40px;
-      }
+    .subtitulo-pagina {
+      font-size: 15px;
+      color: #6b7280;
+    }
 
-      .topico {
-        background-color: #ffffff;
-        padding: 20px;
-        margin-bottom: 20px;
-        border: 2px solid #e5e7eb;
-        border-radius: 12px;
-      }
+    .conteudo {
+      width: 90%;
+      margin: 0 auto;
+      padding-bottom: 40px;
+    }
 
-      .topico-titulo {
-        font-size: 22px;
-        margin-bottom: 12px;
-        color: #111827;
-      }
+    .topico {
+      background-color: #ffffff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+    }
 
-      .rodape {
-        background-color: #1f2937;
-        color: #e5e7eb;
-        font-size: 14px;
-        text-align: center;
-        padding: 20px;
-      }
+    .topico-titulo {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #111827;
+    }
 
-      .rodape-texto {
-        font-size: 14px;
-      }
+    .rodape {
+      background-color: #1f2937;
+      color: #e5e7eb;
+      font-size: 14px;
+      text-align: center;
+      padding: 20px;
+    }
 
-     
-       .texto-destaque{ 
-
-        font-weight: bolder;
-        color: red;
-         
-       }
-      .texto-grande{ 
-        font-size: 24px;
-        text-align: center;
+    .rodape-texto {
+      font-size: 14px;
+    }
 
 
+    .texto-destaque {
 
-      }
+      font-weight: bolder;
+      color: red;
 
+    }
 
-      .caixa-azul{
-        background-color: lightblue;
-        padding: 20px;
-        border:2px solid navy;
-        margin: 30px;
-
-
-      }
-
-      .caixa-amarela{   
-       background-color:#ffcc00;
-        padding: 20px;
-        border: 2px dashed #9a3412;
-        margin: 30px;
-  
-      }
-
-     .item-vermelho{ 
-      color: #ffffff;  
-     background-color:#ef4444;
-     font-size: 22px;
-     padding: 20px;
-     width: 80px;
-     margin: 5px;
-     height:80px  ;
-     text-align: center;
-
-     border-radius: 12px;
-
-     
-      
-     }
-
-     .item-verde{
-        color: #ffffff;
-        background-color: #22c55e;
-         font-size: 22px;
-     padding: 20px;
-     width: 80px;
-     margin: 5px;
-     height:80px  ;
-     text-align: center;
-     border-radius: 12px;
-    
-     }
-
-     .item-azul{color: #ffffff; 
-    background-color: #3b82f6;
-     font-size: 22px;
-     padding: 20px;
-     width: 80px;
-     margin: 5px;
-     height:80px  ;
-     text-align: center;
-     border-radius: 12px;
+    .texto-grande {
+      font-size: 24px;
+      text-align: center;
 
 
-     }
 
-     .flex-linha{
+    }
 
-        display: flex;
-        grid-template-columns: 1fr 1fr 1fr;
 
-        justify-content: space-between ;
-     }
+    .caixa-azul {
+      background-color: lightblue;
+      padding: 20px;
+      border: 2px solid navy;
+      margin: 30px;
 
-     .grade {
-     display: grid; 
-     grid-template-columns: repeat(3, 1fr);
-     gap: 10px;  
-     }
 
-     .item-grade{
-        background-color: lightcoral;
-     font-size: 22px;
-     padding: 30px;
-     width: 380px;
-     margin: 5px;
-     height:100px;
-     text-align: center;
-     border-radius: 12px;
+    }
 
-     }
-    
-    .bloco-visivel{
+    .caixa-amarela {
+      background-color: #ffcc00;
+      padding: 20px;
+      border: 2px dashed #9a3412;
+      margin: 30px;
+
+    }
+
+    .item-vermelho {
+      color: #ffffff;
+      background-color: #ef4444;
+      font-size: 22px;
+      padding: 20px;
+      width: 80px;
+      margin: 5px;
+      height: 80px;
+      text-align: center;
+
+      border-radius: 12px;
+
+
+
+    }
+
+    .item-verde {
+      color: #ffffff;
+      background-color: #22c55e;
+      font-size: 22px;
+      padding: 20px;
+      width: 80px;
+      margin: 5px;
+      height: 80px;
+      text-align: center;
+      border-radius: 12px;
+
+    }
+
+    .item-azul {
+      color: #ffffff;
+      background-color: #3b82f6;
+      font-size: 22px;
+      padding: 20px;
+      width: 80px;
+      margin: 5px;
+      height: 80px;
+      text-align: center;
+      border-radius: 12px;
+
+
+    }
+
+    .flex-linha {
+
+      display: flex;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      justify-content: space-between;
+    }
+
+    .grade {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .item-grade {
+      background-color: lightcoral;
+      font-size: 22px;
+      padding: 30px;
+      width: 380px;
+      margin: 5px;
+      height: 100px;
+      text-align: center;
+      border-radius: 12px;
+
+    }
+
+    .bloco-visivel {
       display: block;
-      background-color: #dcfce7; 
+      background-color: #dcfce7;
       padding: 20px;
       border: 2px solid #166534;
       color: #16a34a;
 
     }
-    .bloco-escondido{
-        display: none;
-         background-color: #dcfce7; 
+
+    .bloco-escondido {
+      display: none;
+      background-color: #dcfce7;
       padding: 20px;
       border: 2px solid #166534;
       color: #16a34a;
 
     }
-    .barra-fixixa{
+
+    .barra-fixixa {
       background-color: #96c0ff;
-      padding: 10px;  
+      padding: 10px;
       border: 2px solid #1056d8;
       margin-bottom: 10px;
       width: 250px;
     }
-.barra-porcentagem{
+
+    .barra-porcentagem {
       background-color: #dcfce7;
-      padding: 10px;  
+      padding: 10px;
       border: 2px solid #166534;
       margin-bottom: 10px;
     }
 
-      .barra-meia{
-         background-color: #fde68a;
-      padding: 10px;  
+    .barra-meia {
+      background-color: #fde68a;
+      padding: 10px;
       border: 2px solid #b45309;
       margin-bottom: 10px;
-      width:50%;
+      width: 50%;
     }
-      .caixa-posicao 
-      {position: relative;
-        width: 600px;
-        margin-top: 20px;
-      }
-     
 
-      .icone-lupa {
-        position: absolute;
-        left: 200px;
-        top: 50%;
-        transform: translateY(-50%);
-      }
+    .caixa-posicao {
+      position: relative;
+      width: 600px;
+      margin-top: 20px;
+    }
 
-      .campo-busca {
-        width: 233px;
-        height: 35px;
-        border-radius: 10px;
-        padding: 10px;}
 
-    </style>
-  </head>
-  <body>
-    <header class="topo">
-      <h1 class="titulo-pagina">Colinha de CSS</h1>
-      <p class="subtitulo-pagina">
-        Use este HTML e aplique o CSS olhando a versão com estilo.
-      </p>
-    </header>
+    .icone-lupa {
+      position: absolute;
+      left: 200px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
-    <main class="conteudo">
-      <section class="topico">
-        <h2 class="topico-titulo">1. Cores e tipografia</h2>
-        <p class="texto-normal">Este parágrafo usa a fonte padrão.</p>
-        <p class="texto-destaque">Este texto está em negrito e vermelho.</p>
-        <p class="texto-grande">Este texto é maior e centralizado.</p>
-      </section>
+    .campo-busca {
+      width: 233px;
+      height: 35px;
+      border-radius: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
 
-      <section class="topico">
-        <h2 class="topico-titulo">2. Background, padding, margin e border</h2>
-        <div class="caixa-azul">Caixa azul com padding e borda sólida.</div>
-        <div class="caixa-amarela">Caixa amarela com margin e borda tracejada.</div>
-      </section>
+<body>
+  <header class="topo">
+    <h1 class="titulo-pagina">Colinha de CSS</h1>
+    <p class="subtitulo-pagina">
+      Use este HTML e aplique o CSS olhando a versão com estilo.
+    </p>
+  </header>
 
-      <section class="topico">
-        <h2 class="topico-titulo">3. Display flex</h2>
-        <p class="topico-descricao">Elementos alinhados em linha:</p>
-        <div class="flex-linha">
-          <div class="item-flex item-vermelho">1</div>
-          <div class="item-flex item-verde">2</div>
-          <div class="item-flex item-azul">3</div>
-        </div>
-        <p class="topico-descricao">Elementos alinhados em coluna:</p>
-        <div class="flex-coluna">
-          <div class="item-flex item-vermelho">A</div>
-          <div class="item-flex item-verde">B</div>
-          <div class="item-flex item-azul">C</div>
-        </div>
-      </section>
+  <main class="conteudo">
+    <section class="topico">
+      <h2 class="topico-titulo">1. Cores e tipografia</h2>
+      <p class="texto-normal">Este parágrafo usa a fonte padrão.</p>
+      <p class="texto-destaque">Este texto está em negrito e vermelho.</p>
+      <p class="texto-grande">Este texto é maior e centralizado.</p>
+    </section>
 
-      <section class="topico">
-        <h2 class="topico-titulo">4. Display grid</h2>
-        <div class="grade">
-          <div class="item-grade">1</div>
-          <div class="item-grade">2</div>
-          <div class="item-grade">3</div>
-          <div class="item-grade">4</div>
-          <div class="item-grade">5</div>
-          <div class="item-grade">6</div>
-        </div>
-      </section>
+    <section class="topico">
+      <h2 class="topico-titulo">2. Background, padding, margin e border</h2>
+      <div class="caixa-azul">Caixa azul com padding e borda sólida.</div>
+      <div class="caixa-amarela">Caixa amarela com margin e borda tracejada.</div>
+    </section>
 
-      <section class="topico">
-        <h2 class="topico-titulo">5. Display block e none</h2>
-        <div class="bloco-visivel">Este bloco aparece na página (display block).</div>
-        <div class="bloco-escondido">Este bloco está escondido (display none).</div>
-        <p class="texto-normal">O bloco escondido existe no HTML, mas não aparece na tela.</p>
-      </section>
+    <section class="topico">
+      <h2 class="topico-titulo">3. Display flex</h2>
+      <p class="topico-descricao">Elementos alinhados em linha:</p>
+      <div class="flex-linha">
+        <div class="item-flex item-vermelho">1</div>
+        <div class="item-flex item-verde">2</div>
+        <div class="item-flex item-azul">3</div>
+      </div>
+      <p class="topico-descricao">Elementos alinhados em coluna:</p>
+      <div class="flex-coluna">
+        <div class="item-flex item-vermelho">A</div>
+        <div class="item-flex item-verde">B</div>
+        <div class="item-flex item-azul">C</div>
+      </div>
+    </section>
 
-      <section class="topico">
-        <h2 class="topico-titulo">6. Tamanhos fixos e em %</h2>
-        <div class="barra-fixixa">Largura fixa de 250px</div>
-        <div class="barra-porcentagem">Largura de 100%</div>
-        <div class="barra-meia">Largura de 50%</div>
-      </section>
+    <section class="topico">
+      <h2 class="topico-titulo">4. Display grid</h2>
+      <div class="grade">
+        <div class="item-grade">1</div>
+        <div class="item-grade">2</div>
+        <div class="item-grade">3</div>
+        <div class="item-grade">4</div>
+        <div class="item-grade">5</div>
+        <div class="item-grade">6</div>
+      </div>
+    </section>
 
-      <section class="topico">
-        <h2 class="topico-titulo">7. Position relative e absolute</h2>
-        <div class="caixa-posicao">
-          <span class="icone-lupa">&#128269;</span>
-          <input class="campo-busca" type="text" placeholder="Buscar..." />
-        </div>
-      </section>
-    </main>
+    <section class="topico">
+      <h2 class="topico-titulo">5. Display block e none</h2>
+      <div class="bloco-visivel">Este bloco aparece na página (display block).</div>
+      <div class="bloco-escondido">Este bloco está escondido (display none).</div>
+      <p class="texto-normal">O bloco escondido existe no HTML, mas não aparece na tela.</p>
+    </section>
 
-    <footer class="rodape">
-      <p class="rodape-texto">Fundação Sonho Meu - Atividade de CSS</p>
-    </footer>
-  </body>
+    <section class="topico">
+      <h2 class="topico-titulo">6. Tamanhos fixos e em %</h2>
+      <div class="barra-fixixa">Largura fixa de 250px</div>
+      <div class="barra-porcentagem">Largura de 100%</div>
+      <div class="barra-meia">Largura de 50%</div>
+    </section>
+
+    <section class="topico">
+      <h2 class="topico-titulo">7. Position relative e absolute</h2>
+      <div class="caixa-posicao">
+        <span class="icone-lupa">&#128269;</span>
+        <input class="campo-busca" type="text" placeholder="Buscar..." />
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p class="rodape-texto">Fundação Sonho Meu - Atividade de CSS</p>
+  </footer>
+</body>
+
 </html>

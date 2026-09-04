@@ -1,387 +1,478 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loja Sonho Meu - Listagem de Itens</title>
 
-    <style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loja Sonho Meu - Listagem de Itens</title>
+
+  <style>
+    .topo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 16px 32px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .topo-linha {
+      display: flex;
+      align-items: center;
+    }
+
+    .marca {
+      display: flex;
+      align-items: center;
+    }
+
+    .marca-icone {
+      display: block;
+      width: 42px;
+      height: 42px;
+      background-color: #16a34a;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 42px;
+      border-radius: 12px;
+      margin-right: 12px;
+    }
+
+    .marca-nome {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .marca-texto {
+      display: block;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .perfil {
+      display: flex;
+      align-items: center;
+    }
+
+    .perfil-mobile {
+      display: none;
+    }
+
+    .perfil-dados {
+      text-align: right;
+      margin-right: 12px;
+    }
+
+    .perfil-nome {
+      display: block;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .perfil-cargo {
+      display: block;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .perfil-foto {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 2px solid #16a34a;
+    }
+
+    .rodape {
+      background-color: #1f2937;
+      color: #e5e7eb;
+      font-size: 14px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 900px) {
       .topo {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #ffffff;
-        padding: 16px 32px;
-        border-bottom: 2px solid #e5e7eb;
+        display: block;
+        padding: 16px;
       }
 
       .topo-linha {
-        display: flex;
-        align-items: center;
+        justify-content: space-between;
       }
 
-      .marca {
-        display: flex;
-        align-items: center;
-      }
-
-      .marca-icone {
-        display: block;
-        width: 42px;
-        height: 42px;
-        background-color: #16a34a;
-        color: #ffffff;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        line-height: 42px;
-        border-radius: 12px;
-        margin-right: 12px;
-      }
-
-      .marca-nome {
-        font-size: 22px;
-        font-weight: bold;
-      }
-
-      .marca-texto {
-        display: block;
-        font-size: 13px;
-        color: #6b7280;
-      }
-
-      .perfil {
-        display: flex;
-        align-items: center;
-      }
-
-      .perfil-mobile {
+      .perfil-desktop {
         display: none;
       }
 
-      .perfil-dados {
-        text-align: right;
-        margin-right: 12px;
+      .perfil-mobile {
+        display: flex;
       }
+    }
 
-      .perfil-nome {
-        display: block;
-        font-size: 15px;
-        font-weight: bold;
-      }
+    .busca {
+      position: relative;
+      width: 600px;
+      margin-top: 10px;
 
-      .perfil-cargo {
-        display: block;
-        font-size: 12px;
-        color: #6b7280;
-      }
+    }
 
-      .perfil-foto {
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-        border: 2px solid #16a34a;
-      }
+    .busca-lupa {
+      position: absolute;
+      left: 435px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
-      .rodape {
-        background-color: #1f2937;
-        color: #e5e7eb;
-        font-size: 14px;
-        text-align: center;
-        padding: 20px;
-      }
+    .busca-campo {
+      width: 450px;
+      height: 15px;
+      border-radius: 17px;
+      padding: 10px;
+      border: 2px solid gray;
 
-      @media (max-width: 900px) {
-        .topo {
-          display: block;
-          padding: 16px;
-        }
+    }
 
-        .topo-linha {
-          justify-content: space-between;
-        }
 
-        .perfil-desktop {
-          display: none;
-        }
+    .filtros {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      background-color: #ffffff;
+      padding: 14px 32px;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #e5e7eb;
 
-        .perfil-mobile {
-          display: flex;
-        }
-      }
-      .busca{
-        position:relative ;
-        width: 600px;
-        margin-top: 10px;
-        
-      }
+    }
 
-     .busca-lupa {
-        position: absolute;
-        left: 435px;
-        top: 50%;
-        transform:translateY(-50%) ;
-      }
 
-    .busca-campo  {
-        width: 450px;
-        height: 15px;
-        border-radius: 17px;
-        padding: 10px;
-        border: 2px solid gray;
+    .filtro-botao {
 
-      }
-
-     .filtro-botao{
-
-      border:2px solid #e5e7eb;
+      border: 2px solid #e5e7eb;
       border-radius: 15px;
-      background-color :#f3f4f6;
-      padding: 8px 16px ;
+      background-color: #f3f4f6;
+      padding: 8px 16px;
       color: #374151;
-      font-size: 14px ;
+      font-size: 14px;
       cursor: pointer;
 
-     
-      
 
-    
-      }
-      
-     
 
-     .filtro-ativo{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+    .filtro-ativo {
       background-color: #16a36a;
       color: #ffffff;
       transform: scale(1.1);
-      
-
-      }
-      .titulo-secao{
-        font-size:28px ;
-        font-family: arial, Helvetica, sans-serif;
-        color: #1f2937;
-      
-  
-      }
-
-      .subtitulo-secao{
-        font-family: Arial, Helvetica, sans-serif;
-        color: #6b7280;
 
 
-      }
+    }
+
+    .titulo-secao {
+      font-size: 25px;
+      font-family: arial, Helvetica, sans-serif;
+      color: #1f2937;
+
+
+    }
+
+    .subtitulo-secao {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #6b7280;
+
+
+    }
 
 
 
-      .lista{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
-        font-size: 22px;
-     padding: 30px;
-     width: 180px;
-     margin: 5px;
-     height:100px;
-     
-     border-radius: 12px;
-      }
+    .lista {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      font-size: 14px;
+      padding: 30px;
+      width: 180px;
+
+      margin: 5px;
 
 
-      .card {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 1px 2px;
-  
-
-}
+      border-radius: 10px;
+    }
 
 
-.card-foto {
-
-  width: 300px;
-  height: 210px;
-}
-      
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 1px 1px color(srgb red green blue);
+      font-family: Arial, Helvetica, sans-serif;
 
 
 
 
-      
-      
 
 
 
-
-     
-
-
-      
+    }
 
 
+    .card-foto {
+
+      width: 270px;
+      height: 200px;
+      border-radius: 12px;
+    }
+
+    .card-tag {
+      font-size: 13px;
+      background-color: #dcfce7;
+      color: #166534;
+      width: min-content;
+      border-radius: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+
+    .card-nome {
+      margin: 0;
+      font-size: 22px;
+      color: #1f2937;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+
+    .card-descricao {
+      font-size: medium;
+      color: #6b7280;
+      margin-bottom: 14px;
+    }
+
+    .card-preco {
+      font-size: 24px;
+      color: #16a34a;
+      margin-left: 2px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+
+    .card-botao {
+
+      background-color: #1f2937;
+      color: #ffffff;
+      font-size: 14px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+
+    }
+
+    .aviso {
+      display: none;
+      background-color: #dcfce7;
+      color: #9a3412;
+      padding: 20px;
+      border: 2px dashed #fdba74;
+      margin-bottom: 10px;
+
+    }
+
+    .card-rodape {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
 
 
-      
-    </style>
-  </head>
+    }
+  </style>
+</head>
 
-  <body>
-    <header class="topo">
-      <div class="topo-linha">
-        <div class="marca">
-          <span class="marca-icone">S</span>
-          <div>
-            <span class="marca-nome">Sonho Store</span>
-            <span class="marca-texto">Tudo para o seu dia</span>
-          </div>
-        </div>
-
-        <div class="perfil perfil-mobile">
-          <div class="perfil-dados">
-            <span class="perfil-nome">Ana Souza</span>
-            <span class="perfil-cargo">Cliente</span>
-          </div>
-          <img
-            class="perfil-foto"
-            src="https://i.pravatar.cc/100?img=47"
-            alt="Foto de perfil" />
+<body>
+  <header class="topo">
+    <div class="topo-linha">
+      <div class="marca">
+        <span class="marca-icone">S</span>
+        <div>
+          <span class="marca-nome">Sonho Store</span>
+          <span class="marca-texto">Tudo para o seu dia</span>
         </div>
       </div>
 
-      <div class="busca">
-        <input
-          class="busca-campo"
-          type="text"
-          id="campoBusca"
-          placeholder="Buscar produtos..." />
-        <span class="busca-lupa">&#128269;</span>
-      </div>
-
-      <div class="perfil perfil-desktop">
+      <div class="perfil perfil-mobile">
         <div class="perfil-dados">
           <span class="perfil-nome">Ana Souza</span>
           <span class="perfil-cargo">Cliente</span>
         </div>
-        <img
-          class="perfil-foto"
-          src="https://i.pravatar.cc/100?img=47"
-          alt="Foto de perfil" />
+        <img class="perfil-foto" src="https://i.pravatar.cc/100?img=47" alt="Foto de perfil" />
       </div>
-    </header>
+    </div>
 
-    <nav class="filtros">
-      <button class="filtro-botao filtro-ativo" onclick="filtrar('todos', this)">
-        Todos
-      </button>
-      <button class="filtro-botao" onclick="filtrar('eletronicos', this)">
-        Eletrônicos
-      </button>
-      <button class="filtro-botao" onclick="filtrar('casa', this)">Casa</button>
-      <button class="filtro-botao" onclick="filtrar('esporte', this)">
-        Esporte
-      </button>
-      <button class="filtro-botao" onclick="filtrar('moda', this)">Moda</button>
-    </nav>
+    <div class="busca">
+      <input class="busca-campo" type="text" id="campoBusca" placeholder="Buscar produtos..." />
+      <span class="busca-lupa">&#128269;</span>
+    </div>
 
-    <main class="conteudo">
-      <h1 class="titulo-secao">Produtos em destaque</h1>
-      <p class="subtitulo-secao">Escolha uma categoria ou pesquise pelo nome.</p>
+    <div class="perfil perfil-desktop">
+      <div class="perfil-dados">
+        <span class="perfil-nome">Ana Souza</span>
+        <span class="perfil-cargo">Cliente</span>
+      </div>
+      <img class="perfil-foto" src="https://i.pravatar.cc/100?img=47" alt="Foto de perfil" />
+    </div>
+  </header>
 
-      <section class="lista" id="lista">
-        <article class="card" data-categoria="eletronicos" data-nome="fone bluetooth">
-          <img
-            class="card-foto"
-            draggable="true"
-            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600"
-            alt="Fone de ouvido" />
-          <span class="card-tag">Eletrônicos</span>
-          <h2 class="card-nome">Fone Bluetooth</h2>
-          <p class="card-descricao">Som limpo e bateria de longa duração.</p>
-          <div class="card-rodape">
-            <span class="card-preco">R$ 199</span>
-            <button class="card-botao">Comprar</button>
-          </div>
-        </article>
+  <nav class="filtros">
+    <button class="filtro-botao filtro-ativo" onclick="filtrar('todos', this)">
+      Todos
+    </button>
+    <button class="filtro-botao" onclick="filtrar('eletronicos', this)">
+      Eletrônicos
+    </button>
+    <button class="filtro-botao" onclick="filtrar('casa', this)">Casa</button>
+    <button class="filtro-botao" onclick="filtrar('esporte', this)">
+      Esporte
+    </button>
+    <button class="filtro-botao" onclick="filtrar('moda', this)">Moda</button>
+  </nav>
 
-        <article class="card" data-categoria="eletronicos" data-nome="smartwatch">
-          <img
-            class="card-foto"
-            draggable="true"
-            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600"
-            alt="Relógio inteligente" />
-          <span class="card-tag">Eletrônicos</span>
-          <h2 class="card-nome">Smartwatch</h2>
-          <p class="card-descricao">Monitore passos, sono e notificações.</p>
-          <div class="card-rodape">
-            <span class="card-preco">R$ 349</span>
-            <button class="card-botao">Comprar</button>
-          </div>
-        </article>
+  <main class="conteudo">
+    <h1 class="titulo-secao">Produtos em destaque</h1>
+    <p class="subtitulo-secao">Escolha uma categoria ou pesquise pelo nome.</p>
 
-        <article class="card" data-categoria="casa" data-nome="luminaria de mesa">
-          <img
-            class="card-foto"
-            draggable="true"
-            src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=600"
-            alt="Luminária de mesa" />
-          <span class="card-tag">Casa</span>
-          <h2 class="card-nome">Luminária de Mesa</h2>
-          <p class="card-descricao">Luz suave para estudar e trabalhar.</p>
-          <div class="card-rodape">
-            <span class="card-preco">R$ 89</span>
-            <button class="card-botao">Comprar</button>
-          </div>
-        </article>
+    <section class="lista" id="lista">
+      <article class="card" data-categoria="eletronicos" data-nome="fone bluetooth">
+        <img class="card-foto" draggable="true"
+          src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600" alt="Fone de ouvido" />
+        <span class="card-tag">Eletrônicos</span>
+        <h2 class="card-nome">Fone Bluetooth</h2>
+        <p class="card-descricao">Som limpo e bateria de longa duração.</p>
+        <div class="card-rodape">
+          <span class="card-preco">R$ 199</span>
+          <button class="card-botao">Comprar</button>
+        </div>
+      </article>
 
-        <article class="card" data-categoria="casa" data-nome="cafeteira">
-          <img
-            class="card-foto"
-            draggable="true"
-            src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?q=80&w=600"
-            alt="Cafeteira" />
-          <span class="card-tag">Casa</span>
-          <h2 class="card-nome">Cafeteira</h2>
-          <p class="card-descricao">Café pronto em poucos minutos.</p>
-          <div class="card-rodape">
-            <span class="card-preco">R$ 259</span>
-            <button class="card-botao">Comprar</button>
-          </div>
-        </article>
+      <article class="card" data-categoria="eletronicos" data-nome="smartwatch">
+        <img class="card-foto" draggable="true"
+          src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600" alt="Relógio inteligente" />
+        <span class="card-tag">Eletrônicos</span>
+        <h2 class="card-nome">Smartwatch</h2>
+        <p class="card-descricao">Monitore passos, sono e notificações.</p>
+        <div class="card-rodape">
+          <span class="card-preco">R$ 349</span>
+          <button class="card-botao">Comprar</button>
+        </div>
+      </article>
 
-        <article class="card" data-categoria="esporte" data-nome="tenis de corrida">
-          <img
-            class="card-foto"
-            draggable="true"
-            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600"
-            alt="Tênis de corrida" />
-          <span class="card-tag">Esporte</span>
-          <h2 class="card-nome">Tênis de Corrida</h2>
-          <p class="card-descricao">Leve, confortável e com boa aderência.</p>
-          <div class="card-rodape">
-            <span class="card-preco">R$ 429</span>
-            <button class="card-botao">Comprar</button>
-          </div>
-        </article>
+      <article class="card" data-categoria="casa" data-nome="luminaria de mesa">
+        <img class="card-foto" draggable="true"
+          src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=600" alt="Luminária de mesa" />
+        <span class="card-tag">Casa</span>
+        <h2 class="card-nome">Luminária de Mesa</h2>
+        <p class="card-descricao">Luz suave para estudar e trabalhar.</p>
+        <div class="card-rodape">
+          <span class="card-preco">R$ 89</span>
+          <button class="card-botao">Comprar</button>
+        </div>
+      </article>
 
-        <article class="card" data-categoria="esporte" data-nome="garrafa termica">
-          <img
-            class="card-foto"
-            draggable="true"
-            src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=600"
-            alt="Garrafa térmica" />
-          <span class="card-tag">Esporte</span>
-          <h2 class="card-nome">Garrafa Térmica</h2>
-          <p class="card-descricao">Mantém a temperatura por 12 horas.</p>
-          <div class="card-rodape">
-            <span class="card-preco">R$ 79</span>
-            <button class="card-botao">Comprar</button>
-          </div>
-        </article>
+      <article class="card" data-categoria="casa" data-nome="cafeteira">
+        <img class="card-foto" draggable="true"
+          src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?q=80&w=600" alt="Cafeteira" />
+        <span class="card-tag">Casa</span>
+        <h2 class="card-nome">Cafeteira</h2>
+        <p class="card-descricao">Café pronto em poucos minutos.</p>
+        <div class="card-rodape">
+          <span class="card-preco">R$ 259</span>
+          <button class="card-botao">Comprar</button>
+        </div>
+      </article>
 
-        <article class="card" data-categoria="moda" data-nome="mochila casual">
-          <img
-            class="card-foto"
-            draggable="true"
-          
+      <article class="card" data-categoria="esporte" data-nome="tenis de corrida">
+        <img class="card-foto" draggable="true"
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600" alt="Tênis de corrida" />
+        <span class="card-tag">Esporte</span>
+        <h2 class="card-nome">Tênis de Corrida</h2>
+        <p class="card-descricao">Leve, confortável e com boa aderência.</p>
+        <div class="card-rodape">
+          <span class="card-preco">R$ 429</span>
+          <button class="card-botao">Comprar</button>
+        </div>
+      </article>
+
+      <article class="card" data-categoria="esporte" data-nome="garrafa termica">
+        <img class="card-foto" draggable="true"
+          src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=600" alt="Garrafa térmica" />
+        <span class="card-tag">Esporte</span>
+        <h2 class="card-nome">Garrafa Térmica</h2>
+        <p class="card-descricao">Mantém a temperatura por 12 horas.</p>
+        <div class="card-rodape">
+          <span class="card-preco">R$ 79</span>
+          <button class="card-botao">Comprar</button>
+        </div>
+      </article>
+
+      <article class="card" data-categoria="moda" data-nome="mochila casual">
+        <img class="card-foto" draggable="true"
+          src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600" alt="Mochila" />
+        <span class="card-tag">Moda</span>
+        <h2 class="card-nome">Mochila Casual</h2>
+        <p class="card-descricao">Espaço para notebook e materiais.</p>
+        <div class="card-rodape">
+          <span class="card-preco">R$ 149</span>
+          <button class="card-botao">Comprar</button>
+        </div>
+      </article>
+
+      <article class="card" data-categoria="moda" data-nome="oculos de sol">
+        <img class="card-foto" draggable="true"
+          src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600" alt="Óculos de sol" />
+        <span class="card-tag">Moda</span>
+        <h2 class="card-nome">Óculos de Sol</h2>
+        <p class="card-descricao">Proteção UV com estilo moderno.</p>
+        <div class="card-rodape">
+          <span class="card-preco">R$ 119</span>
+          <button class="card-botao">Comprar</button>
+        </div>
+      </article>
+    </section>
+
+    <p class="aviso" id="aviso">Nenhum produto encontrado nesta busca.</p>
+  </main>
+
+  <footer class="rodape">
+    <p>Sonho Store &copy; 2026 - Projeto de estudo da Fundação Sonho Meu</p>
+  </footer>
+</body>
+
+</html>
