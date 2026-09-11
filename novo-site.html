@@ -13,38 +13,150 @@
     <style>
         .hero {
             position: relative;
-
-
-
-
-
-
-
-
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 100vh;
+            padding: 48px 8%;
+            overflow: hidden;
+            color: white;
         }
 
         .hero-imagem {
             position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             z-index: 0;
+        }
 
-
-
-
-
-
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(10, 40, 20, 0.25) 0%,
+                    rgba(10, 40, 20, 0.75) 100%);
+            z-index: 1;
         }
 
         .hero-marca {
             position: relative;
-
             z-index: 2;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(42px, 7vw, 72px);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 16px;
+        }
+
+        .hero-texto {
+            position: relative;
+            z-index: 2;
+            max-width: 520px;
+            font-size: clamp(16px, 2vw, 18px);
+            margin-bottom: 28px;
+        }
+
+        .hero-botao {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            width: fit-content;
+            background-color: white;
+            font-family: "Manrope", sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .hero-botao {
+            background-color: #16a34a;
+            color: aliceblue;
+        }
+
+
+        .secao-cards {
+            width: min(1100px, 90%);
+            margin: 0 auto;
+            padding: 88px 0 40px;
+
+        }
+
+        .secao-titulo {
+            font-size: 43px;
+
+
+
 
 
         }
 
+        .secao-subtitulo {
+            font-size: 20px;
+            padding: 10px 0px 30px;
 
-        .hero-texto {
-            z-index: 2;
+
+
+        }
+
+        .grade-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            font-size: 14px;
+            padding: 30px;
+            width: 180px;
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 1px 1px color(srgb red green blue);
+            font-family: Arial, Helvetica, sans-serif;
+
+
+
+        }
+
+        .card-imagem {
+            width: 300px;
+            height: 250px;
+            border-radius: 12px;
+
+        }
+
+        .card-titulo {
+            padding: 12px 1px 12px;
+            font-size: 25px;
+
+
+
+
+
+
+        }
+
+        .card-texto {
+            padding: 8px 0px 12px
+        }
+
+        .card-corpo {
+            font-size: ;
+
+
+
 
 
         }
